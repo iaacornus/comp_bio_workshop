@@ -1,7 +1,15 @@
 = Computational Biology Workshop =
 
+- Application of biological and computational chemistry,
+molecular pharmacology, mathematical abstraction and 
+computational techniques in biology; computer-aided drug design 
+and discovery;and conceptualization of in silico methodologies.
+
+= Instructor =
+
 ---
 Instructor:     James Aaron Erang <erang.james@clsu2.edu.ph>
+Supervisor:     Jerwin Undan, Ph.D. <jerwin.undan@clsu2.edu.ph>
 Institution:    Biotechnology and Analytical Laboratory
                 Department of Biological Sciences,
                 College of Science,
@@ -11,14 +19,15 @@ Workshop:       Introduction to Computational Biology
                 and Molecular Pharmacology
 ---
 
-Refer to resources/syllabus/comp_bio_workshop_syllabus_ppr-main.pdf
-for  information regarding the contents of the syllabus,
-prerequisites, other information and requirements.
+= Miscellaneous Information =
 
-All of the materials, instructions and the examples during the
+- Refer to resources/syllabus/comp_bio_workshop_syllabus_ppr-main.pdf
+for  information regarding the contents of the syllabus, prerequisites,
+other information and requirements of the workshop.
+
+- All of the materials, instructions and the examples during the
 session of the workshop are included in this repository.
 
-For any queries regarding the workshop contact the instructor,
-James Aaron Erang <erang.james@clsu2.edu.ph, iaacornus@gmail.com,
-occultuslabrat@gmail.com>.
+- For any queries regarding the workshop contact the instructor,
+James Aaron Erang <erang.james@clsu2.edu.ph, iaacornus@gmail.com>.
 
