@@ -1,5 +1,6 @@
 #include <cstring>
 #include <iostream>
+#include <ostream>
 
 int main() {
     /* this is long comment */
@@ -14,6 +15,12 @@ int main() {
         std::cout << "Hello World! Like this in C++"
             << hello
             << std::endl;
+
+        for (int i = 0; i < 3; i++) {
+            std::cout <<
+                i << " " << hello
+                << std::endl;
+        }
     }
 
     return 0;
