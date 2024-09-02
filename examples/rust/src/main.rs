@@ -12,9 +12,12 @@ fn main() {
         println!(
             "Hello World! Like this in Python, {}", hello
         );
-    } else {
-        println!(
-            "It seems that it is not hello world :("
-        );
+
+        // loop over range of 1 to 4 and print hello world!
+        for i in 1..4 {
+            println!(
+                "{} hello world!", i
+            );
+        }
     }
 }
