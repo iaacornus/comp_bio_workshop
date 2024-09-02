@@ -1,16 +1,24 @@
-def main() -> int:
-    """ this is a docstring """
-    # but this is a comment
-    # this is ignored
-    # this is a variable
-    hello: str = "hello world!"
+class Main[Ex]:
+    """ Main object """
+    def __init__(self) -> None:
+        pass
 
-    # compare this variable to a string
-    if hello == "hello world!":
-        print("The tradition in programming is to print")
-        print(f"Hello World! Like this in Python, {hello}")
+    def main(self) -> int:
+        """ this is a docstring """
+        # but this is a comment
+        # this is ignored
+        # this is a variable
+        hello: str = "hello world!"
 
-    return 0
+        # compare this variable to a string
+        if hello == "hello world!":
+            print("The tradition in programming is to print")
+            print(f"Hello World! Like this in Python, {hello}")
+
+            for i in range(1, 4):
+                print(f"{i} Hello world!")
+
+        return 0
 
 if __name__ == "__main__":
-    main()
+    Main().main()
