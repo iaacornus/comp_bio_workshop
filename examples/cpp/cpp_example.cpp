@@ -1,6 +1,5 @@
 #include <cstring>
 #include <iostream>
-#include <ostream>
 
 int main() {
     /* this is long comment */
@@ -10,9 +9,9 @@ int main() {
 
     // compare this variable to a string
     if ( strcmp(hello, "hello world!") == 0 ) {
-        std::cout << "The tradition in programming is to print"
+        std::cout << "The tradition in programming is to"
             << std::endl;
-        std::cout << "Hello World! Like this in C++"
+        std::cout << "print Hello World! Like this in C++"
             << hello
             << std::endl;
 
