@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void main() { /* this is comment, this is ignored */
+int main() { /* this is comment, this is ignored */
     char hello[] = "hello world!"; // this is variable
 
     if (strcmp(hello, "hello world!") == 0) {
