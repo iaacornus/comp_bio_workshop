@@ -13,10 +13,11 @@ unsigned int factorial(int N) {
 
 int r_sat_func() {
     float r, r_num, r_den;
+    // example arbitrary value, does not represent any
     float L = 50.05; float Kd = 1.65;
     int n = 5; int i = 4;
 
-    unsigned int n_i_matrix = 
+    unsigned int n_i_matrix =
         factorial(n)/factorial(n - i) * factorial(i);
 
     for (int j = 1; j == n; j++) {
