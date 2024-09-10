@@ -19,16 +19,8 @@ __USAGE="
 Usage: bash setup.sh [OPTIONS]
 
 Options:
-    -h, --help              Print this help message.
-    -a, --all               Apply all of the recommended modifications on the system.
-    -f, --flatpak           Setup flatpak repository.
-    -r, --rpmfusion         Setup RPMFusion repository.
-    -c, --codecs            Install codecs.
-    -d, --driver            Install appropriate drivers.
-    -m, --msfonts           Install Micro\$oft fonts.
-    -l, --laptop            Apply laptop recommendations.
-    -o, --optimize          Perform suggested system optimizations.
-    -n, --nvidia            Install proprietary NVidia drivers.
+    -h, --help      Print this help message.
+    -s, --setup     Setup the system for the workshop.
 "
 
 not_installed=()
