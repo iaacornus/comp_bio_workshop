@@ -17,4 +17,4 @@ class BinarySearch:
             else:
                 self.H = M - 1
 
-        return -1
+        return 1
