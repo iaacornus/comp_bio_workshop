@@ -15,12 +15,12 @@ INVALID="\e[1;31m[ INVALID ]\e[0m"
 SUCCESS="\e[1;32m[ SUCCESS ]\e[0m"
 INFO="\e[1;34m[ INFO ]\e[0m"
 
-__USAGE="
+__USAGE="\
 Usage: bash setup.sh [OPTIONS]
 
 Options:
     -h, --help      Print this help message.
-    -s, --setup     Setup the system for the workshop.
+    -s, --setup     Setup the system for the workshop.\
 "
 
 not_installed=()
