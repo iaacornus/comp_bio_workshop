@@ -48,6 +48,15 @@ function print_help () {
     exit 0
 }
 
+function update_system () {
+    echo -e "$INFO Updating system ..."
+    sudo apt-get update         && \
+    sudo apt-get upgrade -y     && \
+    sudo apt autoremove -y      && \
+    sudo apt clean -y
+    echo -e "$INFO Successfully updated the system "
+}
+
 function check_requirements () {
     utils=(             \
         "python"        \
