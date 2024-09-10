@@ -10,10 +10,10 @@
 #
 # ---------------------------------
 
-FAIL="\e[1;41m[ FAIL ]\e[0m"
-INVALID="\e[1;41m[ INVALID ]\e[0m"
-SUCCESS="\e[1;42m[ SUCCESS ]\e[0m"
-INFO="\e[1;44m[ INFO ]\e[0m"
+FAIL="\e[1;31m[ FAIL ]\e[0m"
+INVALID="\e[1;31m[ INVALID ]\e[0m"
+SUCCESS="\e[1;32m[ SUCCESS ]\e[0m"
+INFO="\e[1;34m[ INFO ]\e[0m"
 
 __USAGE="
 Usage: bash setup.sh [OPTIONS]
