@@ -96,3 +96,18 @@ function check_requirements () {
     done
 }
 
+function install_missing () {
+    for _ni in ${not_installed[@]}; do
+        echo -e "$INFO Installing: $_ni ..."
+
+        if [[ $_ni == p\_* ]]; then
+            package="${_ni:2}"
+            pip3 install $package
+        else
+            sudo apt-get install $package
+        fi
+    done
+}
+
+
+check_requirements
