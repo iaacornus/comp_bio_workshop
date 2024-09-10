@@ -60,7 +60,6 @@ function check_requirements () {
         "p_vina"        \
         "p_pillow"      \
     )
-    not_installed=()
 
     for _util in ${utils[@]}; do
         if [[ $_util == p\_* ]]; then
@@ -100,6 +99,3 @@ function install_missing () {
         fi
     done
 }
-
-
-check_requirements
