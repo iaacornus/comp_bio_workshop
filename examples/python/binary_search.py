@@ -1,7 +1,7 @@
 class BinarySearch:
     """ Binary search solution in Python """
 
-    def __init__(self, arr: list[int], n: int) -> None:
+    def __init__(self, arr: list[int], N: int) -> None:
         self.arr: list[int] = arr
         self.H: int = N - 1 # max
         self.L: int = 0     # min
