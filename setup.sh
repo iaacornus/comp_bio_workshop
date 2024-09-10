@@ -99,3 +99,20 @@ function install_missing () {
         fi
     done
 }
+
+while true; do
+    case "$1" in
+        -h | --help )
+            print_help;
+            break;;
+        -s | --setup )
+            update_system;
+            check_requirements;
+            install_missing;
+            check_requirements;
+            break;;
+        -- )
+            echo -e "$INVALID Please select an option.";
+            break;;
+    esac
+done
