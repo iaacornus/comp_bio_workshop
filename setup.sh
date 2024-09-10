@@ -45,3 +45,43 @@ function print_help () {
     echo -e "$__USAGE"
     exit 0
 }
+
+function check_requirements () {
+    utils=(             \
+        "python"        \
+        "pip3"          \
+        "git"           \
+        "p_matplotlib"  \
+        "p_numpy"       \
+        "p_pandas"      \
+        "p_vina"        \
+        "p_pillow"      \
+    )
+    not_installed=()
+
+    for _util in ${utils[@]}; do
+        if [[ $_util == p\_* ]]; then
+            echo -e "$INFO Checking python library: $_util ..."
+            if [ python -c "import $_util" &> /dev/null ]; then
+                echo -e "$SUCCESS $_util installed ..."
+            else
+                echo -e "$INVALID $_util not installed ..."
+                not_installed+=("$_util")
+            fi
+        else
+            echo -e "$INFO Checking package: $_util ..."
+            if [[ -x "$(command -v $_util)" ]]; then
+                echo -e "$SUCCESS $_util in PATH ..."
+            else
+                echo -e "$INVALID $_util not in PATH ..."
+                not_installed+=("$_util")
+            fi
+        fi
+    done
+
+    echo -e "$INVALID The following packages are not installed:"
+    for _ni in ${not_installed[@]}; do
+        echo -e "    $_ni"
+    done
+}
+
