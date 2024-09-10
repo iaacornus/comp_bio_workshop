@@ -31,3 +31,17 @@ Options:
     -n, --nvidia            Install proprietary NVidia drivers.
 "
 
+function setup_fail () {
+    echo -e "$FAIL Installation failed for some reason."
+    exit 1
+}
+
+function setup_success () {
+    echo -e "$SUCCESS Installation successfully finished."
+    exit 0
+}
+
+function print_help () {
+    echo -e "$__USAGE"
+    exit 0
+}
