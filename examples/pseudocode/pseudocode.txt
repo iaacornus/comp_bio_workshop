@@ -1,9 +1,10 @@
-SET VALUE "hello world!" to hello
-CHECK IF hello IS EQUAL TO "hello world!"
-IF EQUAL
-    PRINT "The tradition in programming is to print"
-    PRINT "Hello World! Like this in %s"
+FUNCTION main:
+    SET VALUE "hello world!" to hello
+    CHECK IF hello IS EQUAL TO "hello world!"
+    IF EQUAL
+        PRINT "The tradition in programming is to print"
+        PRINT "Hello World! Like this in %s"
 
-    LOOP i TIMES
-        PRINT "%i hello world!"
-RETURN 0
+        LOOP i TIMES
+            PRINT "%i hello world!"
+    RETURN 0
