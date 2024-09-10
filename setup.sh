@@ -31,6 +31,8 @@ Options:
     -n, --nvidia            Install proprietary NVidia drivers.
 "
 
+not_installed=()
+
 function setup_fail () {
     echo -e "$FAIL Installation failed for some reason."
     exit 1
