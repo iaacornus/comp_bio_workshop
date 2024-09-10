@@ -109,7 +109,6 @@ while true; do
             update_system;
             check_requirements;
             install_missing;
-            check_requirements;
             break;;
         -- )
             echo -e "$INVALID Please select an option.";
