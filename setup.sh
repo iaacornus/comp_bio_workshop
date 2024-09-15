@@ -40,13 +40,19 @@ function print_help () {
     exit 0
 }
 
+function system_info () {
+    echo -e "$INFO Checking system environment variables ..."
+    echo -e "PATH: \e[1m$PATH\e[0m ..."
+    echo -e "Distro: \e[1m$(uname -a)\e[0m"
+}
+
 function update_system () {
     echo -e "$INFO Updating system ..."
     sudo apt-get update         && \
     sudo apt-get upgrade -y     && \
     sudo apt autoremove -y      && \
     sudo apt clean -y
-    echo -e "$INFO Successfully updated the system "
+    echo -e "$INFO Successfully updated the system."
 }
 
 function check_requirements () {
@@ -61,51 +67,58 @@ function check_requirements () {
         "p_pillow"      \
     )
 
+    echo -e "$INFO Checking requirements ..."
     for _util in ${utils[@]}; do
         if [[ $_util == p\_* ]]; then
-            echo -e "$INFO Checking python library: $_util ..."
+            echo -e "Checking python library: \e[1m$_util\e[0m ..."
             if [ python -c "import $_util" &> /dev/null ]; then
-                echo -e "$SUCCESS $_util installed ..."
+                echo -e "\t=> Installed: \e[1m$_util\e[0m ..."
             else
-                echo -e "$INVALID $_util not installed ..."
+                echo -e "\t=> \e[1m$_util\e[0m not installed ..."
                 not_installed+=("$_util")
             fi
         else
-            echo -e "$INFO Checking package: $_util ..."
+            echo -e "Checking package: \e[1m$_util\e[0m ..."
             if [[ -x "$(command -v $_util)" ]]; then
-                echo -e "$SUCCESS $_util in PATH ..."
+                echo -e "\t=> Found \e[1m$_util\e[0m in PATH ..."
             else
-                echo -e "$INVALID $_util not in PATH ..."
+                echo -e "\t=> \e[1m$_util\e[0m is not in PATH ..."
                 not_installed+=("$_util")
             fi
         fi
     done
 
-    echo -e "$INVALID The following packages are not installed:"
+    echo -e "$INFO The following packages are not installed:"
     for _ni in ${not_installed[@]}; do
-        echo -e "    $_ni"
+        echo -e "\t$_ni"
     done
+    echo -e "$INFO Finished checking all the libraries and packages ..."
 }
 
 function install_missing () {
+    echo -e "$INFO Installing missing libraries and packages ..."
     for _ni in ${not_installed[@]}; do
-        echo -e "$INFO Installing: $_ni ..."
+        echo -e "Installing: \e[1m$_ni\e[0m ..."
 
         if [[ $_ni == p\_* ]]; then
             package="${_ni:2}"
+            echo -e "\t=> PIP: Installing \e[1m$package\e[0m ..."
             pip3 install $package
         else
+            echo -e "\t=> APT: Installing \e[1m$package\e[0m ..."
             sudo apt-get install $package
         fi
     done
+    echo -e "$SUCCESS Successfully installed all packages."
 }
 
 function setup () {
+    system_info         && \
     update_system       && \
     check_requirements  && \
     install_missing     || \
     setup_fail
-    setup_sucess
+    setup_success
 }
 
 while true; do
