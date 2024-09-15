@@ -100,15 +100,21 @@ function install_missing () {
     done
 }
 
+function setup () {
+    update_system       && \
+    check_requirements  && \
+    install_missing     || \
+    setup_fail
+    setup_sucess
+}
+
 while true; do
     case "$1" in
         -h | --help )
             print_help;
             break;;
         -s | --setup )
-            update_system;
-            check_requirements;
-            install_missing;
+            setup;
             break;;
         -- )
             echo -e "$INVALID Please select an option.";
