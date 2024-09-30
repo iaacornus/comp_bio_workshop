@@ -33,7 +33,7 @@ sudo apt install curl python3 python3-pip
 7. Run the setup script using this:
 
 ```bash
-curl -s -o- https://raw.githubusercontent.com/iaacornus/comp_bio_workshop/refs/heads/main/setup.sh | bash
+curl -s -o- https://raw.githubusercontent.com/iaacornus/comp_bio_workshop/refs/heads/main/scripts/setup.sh | bash
 ```
 
 # Install Python
