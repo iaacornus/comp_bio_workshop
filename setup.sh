@@ -119,16 +119,4 @@ function setup () {
     setup_success
 }
 
-while true; do
-    case "$1" in
-        -h | --help )
-            print_help;
-            break;;
-        -s | --setup )
-            setup;
-            break;;
-        -- )
-            echo -e "$INVALID Please select an option.";
-            break;;
-    esac
-done
+setup
