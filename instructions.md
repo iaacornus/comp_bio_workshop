@@ -1,3 +1,41 @@
+# For Windows People
+
+_or those sufficiently dense and cannot follow simple instructions._
+
+1. Open Powershell in administrator mode (click "Run as Administrator")
+
+![powershell](assets/powershell.png)
+
+2. Create `wsl` (Windows Subsystem for Linux) instance:
+
+```powershell
+wsl --install
+```
+
+3. Open the WSL by searching for "Ubuntu", click the nearest you recognize, this will open this up:
+
+![ubuntu](assets/ubuntu.png)
+
+4. Setup your username and password with whatever you want. Note that nothing will show as you type your password, this is known as _blind typing_.
+
+5. Update the system using:
+
+```bash
+sudo apt update && sudo apt upgrade
+```
+
+6. Install `curl` and `python`
+
+```bash
+sudo apt install curl python3 python3-pip
+```
+
+7. Run the setup script using this:
+
+```bash
+curl -s -o- https://raw.githubusercontent.com/iaacornus/comp_bio_workshop/refs/heads/main/setup.sh | bash
+```
+
 # Install Python
 
 Download Python from [python.org](https://www.python.org/downloads/)
