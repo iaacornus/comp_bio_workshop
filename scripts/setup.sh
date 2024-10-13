@@ -144,8 +144,7 @@ function launch () {
         clone_repo
     fi
 
-    cd comp_bio_workshop/workshop-3
-    code workshop_3.ipynb
+    code comp_bio_workshop
 }
 
 function setup () {
