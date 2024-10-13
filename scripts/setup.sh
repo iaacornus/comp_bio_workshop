@@ -110,13 +110,55 @@ function install_missing () {
     echo -e "successfully installed all packaSUCCESSges."
 }
 
+function install_code () {
+    wget https://vscode.download.prss.microsoft.com/dbazure/download/stable/384ff7382de624fb94dbaf6da11977bba1ecd427/code_1.94.2-1728494015_amd64.deb
+    sudo apt install code_1.94.2-1728494015_amd64.deb
+
+    if [[  -x "$(command -v code)" ]]; then
+        echo -e "    code successfully installed."
+    fi
+
+    pkill -9 code # if ever it starts for some reason
+}
+
+function code_setup () {
+    code_ext=(
+        ms-python.python        \
+        ms-toolsai.jupyter      \
+        magicstack.MagicPython  \
+    )
+
+    for _ext in ${code_ext[@]}; do
+        echo -e "installing: $_ni ..."
+        code --install-extension $_ext
+        echo -e "    installed: $_util ..."
+    done
+}
+
+function clone_repo () {
+    git clone https://github.com/iaacornus/comp_bio_workshop
+}
+
+function launch () {
+    if [[ ! -d "./comp_bio_workshop" ]]; then
+        clone_repo
+    fi
+
+    cd comp_bio_workshop/workshop-3
+    code workshop_3.ipynb
+}
+
 function setup () {
     system_info         && \
     update_system       && \
     check_requirements  && \
-    install_missing     || \
-    setup_fail
+    install_missing     && \
+    install_code        && \
+    code_setup          && \
+    clone_repo          && \
+    setup_fail          || \
     setup_success
 }
 
 setup
+launch
